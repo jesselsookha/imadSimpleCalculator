@@ -95,8 +95,12 @@ class MainActivity : AppCompatActivity() {
         val dblNum1 = etNum1.text.toString().toDouble()
         val dblNum2 = etNum2.text.toString().toDouble()
 
-        dblResult = dblNum1 / dblNum2
-
-        tvDisplay.text = String.format(Locale.ENGLISH,"%s",dblResult.toString())
+        if (dblNum2 == 0.0) {
+            tvDisplay.text = "Cannot divide by zero"
+        } else {
+            dblResult = dblNum1 / dblNum2
+            tvDisplay.text = String.format(Locale.ENGLISH,"%s",dblResult.toString())
+        }
     }
+
 }
